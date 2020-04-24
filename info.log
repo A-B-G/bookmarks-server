@@ -1,0 +1,22 @@
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Card id id not found.","level":"error"}
+{"message":"Card id 1 not found.","level":"error"}
+{"message":"Card id 1 not found.","level":"error"}
+{"message":"Card id id not found.","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"A title is required.","level":"error"}
+{"message":"Card ID 6890cd28-205a-46f1-96e2-a25287582049 created!","level":"info"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Card ID 18732f48-667f-40dd-a172-a57a0abdc74d created!","level":"info"}
+{"message":"Bookmark ID 18732f48-667f-40dd-a172-a57a0abdc74d deleted.","level":"info"}
