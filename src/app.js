@@ -50,7 +50,8 @@ app.get('/', (req, res) => {
 //////////////////////////////////GET, POST, DELETE route handlers/////////////////////////////////////////
 //write a ROUTE handler for the GET /bookmarks endpoint that returns a list of bookmark titles
 app.get('/bookmarks', (req, res) => {
-    const response = bookmarks["bookmarks"].map(bookmark => bookmark.title);
+    const response = bookmarks;
+    const { search = " " } = req.query;
     res.json(response);
 });
 //write a ROUTE handler for the GET /bookmarks/:id endpoint that retrieves a bookmark id
@@ -80,6 +81,7 @@ const handleNewBookmark = (req, res) => {
     }
     //if valid request, construct a bookmark with request data and generated ID; push the bookmark object into the bookmarks array
     const id = uuid();
+    console.log(`id is`, id);
     const newBookmark = {
         id,
         title,
