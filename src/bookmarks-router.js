@@ -40,7 +40,7 @@ bookmarksRouter
         }
         bookmarks["bookmarks"].push(newBookmark);//push the new bookmark object into the bookmarks data file
         logger.info(`Bookmarks ID ${id} created!`);
-        res.status(202).location(`http://localhost:8000/bookmarks/${id}`).json(newBookmark); //return a status of created, with new bookmark info
+        res.status(201).location(`http://localhost:8000/bookmarks/${id}`).json(newBookmark); //return a status of created, with new bookmark info
         
     });
 
