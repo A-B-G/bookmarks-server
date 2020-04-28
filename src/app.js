@@ -69,23 +69,30 @@ app.get('/bookmarks/:id', handleGetBookmarkById)
 //write a ROUTE handler for the POST /bookmarks that accepts a JSON object bookmark and add it to the bookmarks list
 const handleNewBookmark = (req, res) => {
     //GET the data from the body with the .body method (use JSON data to parse body of request)
-    const { title, content } = req.body;
+    const { title, url, rating, description } = req.body;
     //validate requests and ensure required parameters provided
     if(!title) {
         logger.error(`A title is required.`);
-        return res.status(400).send(`Invalid data`);
+        return res.status(400).send(`Invalid data.`);
     }
-    if(!content) {
-        logger.error(`Content is required.`);
-        return res.status(400).send(`Invalid data`);
+    if(!url) {
+        logger.error(`url is required.`);
+        return res.status(400).send(`Please provide a valid URL.`);
     }
+    if(!rating || isNaN(rating)) {
+        logger.error(`A valid number is required`);
+        return res.status(400).send(`Please provide a whole number between 1 and 5.`);
+    }
+    
     //if valid request, construct a bookmark with request data and generated ID; push the bookmark object into the bookmarks array
     const id = uuid();
     console.log(`id is`, id);
     const newBookmark = {
         id,
         title,
-        content
+        url,
+        rating,
+        description
     };
     bookmarks["bookmarks"].push(newBookmark);
     logger.info(`Card ID ${id} created!`);
