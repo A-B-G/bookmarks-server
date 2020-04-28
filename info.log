@@ -27,3 +27,6 @@
 {"message":"A title is required.","level":"error"}
 {"message":"A title is required.","level":"error"}
 {"message":"Card ID a836b8fb-836a-49fb-8420-e0bb37676a33 created!","level":"info"}
+{"message":"Bookmarks ID 45673f06-92bb-438f-af02-865e2cda41e1 created!","level":"info"}
+{"message":"Bookmark ID 45673f06-92bb-438f-af02-865e2cda41e1 deleted.","level":"info"}
+{"message":"Bookmarks ID 45673f06-92bb-438f-af02-865e2cda41e1 not found.","level":"error"}

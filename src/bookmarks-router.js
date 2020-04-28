@@ -6,6 +6,7 @@ const { v4: uuid } = require('uuid');
 
 let bookmarks = require('./bookmarks-data');
 
+//write a route handler for the GET /bookmarks endpoint that returns all bookmarks
 bookmarksRouter
     .route('/bookmarks')
     .get((req, res) => {
@@ -44,4 +45,26 @@ bookmarksRouter
         
     });
 
+    bookmarksRouter
+        .route('/bookmarks/:id')
+        .get((req, res) => { //write a ROUTE handler for the GET /bookmarks/:id that retrieves a bookmark with a valid ID
+            const { id } = req.params;
+            const bookmarkID = bookmarks["bookmarks"].find(bookmark => bookmark.id == id);
+            if(!bookmarkID) {
+                logger.error(`Card id ${id} not found.`);
+                return res.status(404).send("No bookmark found.");
+            }
+            res.json(bookmarkID);
+        })
+        .delete((req, res) => { //write a ROUTE handler for the DELETE /bookmarks/:id that deletes a bookmark with a valid ID
+            const { id } = req.params;
+            const bookmarksIndex = bookmarks["bookmarks"].findIndex(bookmark => bookmark.id == id);
+            if(bookmarksIndex === -1) {
+                logger.error(`Bookmarks ID ${id} not found.`);
+                return res.status(404).send("Bookmark ID not found.");
+            }
+            bookmarks["bookmarks"].splice(bookmarksIndex, 1)
+            logger.info(`Bookmark ID ${id} deleted.`);
+            res.status(204).end();
+        })
     module.exports = bookmarksRouter;
